@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">FruitChecker</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="fruits">
+        <item>Apple</item>
+        <item>Apricot</item>
+        <item>Banana</item>
+        <item>Blackberry</item>
+        <item>Blueberry</item>
+        <item>Cherry</item>
+        <item>Durian</item>
+        <item>Fig</item>
+        <item>Gooseberry</item>
+        <item>Grapes</item>
+        <item>GreenApple</item>
+        <item>Guava</item>
+        <item>Kiwi</item>
+        <item>Lemon</item>
+        <item>Lime</item>
+        <item>Lingonberry</item>
+        <item>Lychee</item>
+        <item>Mango</item>
+        <item>Melon</item>
+        <item>Orange</item>
+        <item>Papaya</item>
+        <item>Passionfruit</item>
+        <item>Pear</item>
+        <item>Persimmon</item>
+        <item>Pineapple</item>
+        <item>Plum</item>
+        <item>Raspberry</item>
+        <item>Strawberry</item>
+        <item>Tomato</item>
+        <item>Umbu</item>
+        <item>Watermelon</item>
+    </string-array>
+
+    <string-array name="nutrition">
+        <item>carbohydrates</item>
+        <item>protein</item>
+        <item>fat</item>
+        <item>calories</item>
+        <item>sugar</item>
+    </string-array>
+</resources>
