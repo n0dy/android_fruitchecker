@@ -40,7 +40,7 @@ public class ByvalueFragment extends Fragment {
     ListView listView;
 
 
-    //currency fragment constructor
+
     public static ByvalueFragment newInstance(String param1, String param2)
     {
         ByvalueFragment fragment = new ByvalueFragment();
@@ -53,8 +53,8 @@ public class ByvalueFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_byvalue, container, false);
-        //initialize values
-        nutrtitionSpinner = view.findViewById(R.id.nutrtitionSpinner); //drop down menu
+
+        nutrtitionSpinner = view.findViewById(R.id.nutrtitionSpinner);
         btnSubmit = view.findViewById(R.id.btnSubmit);
         textDisplay = view.findViewById(R.id.textDisplay);
         editTextMax =  view.findViewById(R.id.editTextMax);
@@ -62,7 +62,7 @@ public class ByvalueFragment extends Fragment {
         listView = view.findViewById(R.id.listView);
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 
-        //set drop down menu
+
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(getContext(), R.array.nutrition, android.R.layout.simple_spinner_item);
         nutrtitionSpinner.setAdapter(adapter);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
@@ -83,11 +83,11 @@ public class ByvalueFragment extends Fragment {
 
         btnSubmit.setOnClickListener(new View.OnClickListener()
         {
-            //on click event
             public void onClick(View v)
             {
                 String s = editTextMax.getText().toString();
                 String url = "https://www.fruityvice.com/api/fruit/" + base[0] + "?min=" + editTextMin.getText() + "&max=" + editTextMax.getText();
+                textDisplay.setText(" ");
                 JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>()
                 {
                     public void onResponse(JSONArray response)
@@ -97,7 +97,6 @@ public class ByvalueFragment extends Fragment {
 
                             List<FruitModel> allFruits = new ArrayList<>();
 
-                            //loop for each fruit in the response
                             for(int i = 0; i< response.length();i++){
                                 FruitModel fruitModel = new FruitModel();
                                 JSONObject object  = response.getJSONObject(i);
@@ -124,7 +123,6 @@ public class ByvalueFragment extends Fragment {
                     }
                 }, new Response.ErrorListener()
                 {
-                    //handle errors
                     public void onErrorResponse(VolleyError error)
                     {
                         listView.setAdapter(null);

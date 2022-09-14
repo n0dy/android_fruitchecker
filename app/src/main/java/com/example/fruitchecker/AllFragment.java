@@ -37,7 +37,7 @@ public class AllFragment extends Fragment
 
     public AllFragment()
     {
-        // Required empty public constructor
+
     }
 
     public static AllFragment newInstance(String param1, String param2) {
@@ -52,19 +52,19 @@ public class AllFragment extends Fragment
                              Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_all, container, false);
-        //initiliaze values
+
         btnSubmit = view.findViewById(R.id.btnSubmit);
         listView = view.findViewById(R.id.listView);
         textDisplay = view.findViewById(R.id.textDisplay);
 
         btnSubmit.setOnClickListener(new View.OnClickListener()
         {
-            //on click event
             public void onClick(View v)
             {
 
                 RequestQueue queue = Volley.newRequestQueue(getActivity());
                 String url = "https://www.fruityvice.com/api/fruit/all";
+                textDisplay.setText(" ");
 
                 JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
                     public void onResponse(JSONArray response)
@@ -72,8 +72,6 @@ public class AllFragment extends Fragment
                         try
                         {
                             List<FruitModel> allFruits = new ArrayList<>();
-
-                            //loop for each fruit in the response
                             for(int i = 0; i< response.length();i++){
                                 FruitModel fruitModel = new FruitModel();
                                 JSONObject object  = response.getJSONObject(i);

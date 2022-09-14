@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CurrencyExchange.iml" filepath="$PROJECT_DIR$/.idea/modules/CurrencyExchange.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CurrencyExchange.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CurrencyExchange.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CurrencyExchange.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CurrencyExchange.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CurrencyExchange.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CurrencyExchange.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CurrencyExchange.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CurrencyExchange.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FruitChecker.iml" filepath="$PROJECT_DIR$/.idea/modules/FruitChecker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FruitChecker.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FruitChecker.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FruitChecker.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FruitChecker.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FruitChecker.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FruitChecker.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/FruitChecker.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/FruitChecker.app.unitTest.iml" />
     </modules>
   </component>
 </project>

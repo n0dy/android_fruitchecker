@@ -43,15 +43,13 @@ public class BynameFragment extends Fragment
                              Bundle savedInstanceState) {
 
 
-        View view = inflater.inflate(R.layout.fragment_byname, container, false); //view - prozor
+        View view = inflater.inflate(R.layout.fragment_byname, container, false);
 
-        //initialize values
-        baseSpinner = view.findViewById(R.id.baseSpinner); //drop down menu
+        baseSpinner = view.findViewById(R.id.baseSpinner);
         btnSubmit = view.findViewById(R.id.btnSubmit);
         textDisplay = view.findViewById(R.id.textDisplay);
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 
-        //set drop down menu
         ArrayAdapter<CharSequence>adapter=ArrayAdapter.createFromResource(getContext(), R.array.fruits, android.R.layout.simple_spinner_item);
         baseSpinner.setAdapter(adapter);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
@@ -70,25 +68,25 @@ public class BynameFragment extends Fragment
             }
         });
 
-        //
         btnSubmit.setOnClickListener(new View.OnClickListener()
         {
-            //on click event
+
             public void onClick(View v)
             {
                 String url = "https://www.fruityvice.com/api/fruit/" + base[0];
+                textDisplay.setText(" ");
+
                 JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>()
                 {
-                    public void onResponse(JSONObject response) //sta se desava na response od api-a
+                    public void onResponse(JSONObject response)
                     {
                         try
                         {
 
                             FruitModel fruitModel = new FruitModel();
-                            //get name
+
                             fruitModel.setId(response.getString("name"));
 
-                            //get nutrition values
                             String nutritions  = response.getString("nutritions");
                             JSONObject object1 = new JSONObject(nutritions);
                             fruitModel.setCalories(object1.getString("calories"));
@@ -97,8 +95,6 @@ public class BynameFragment extends Fragment
                             fruitModel.setFat(object1.getString("fat"));
                             fruitModel.setSugar(object1.getString("sugar"));
 
-
-                            //display text
                             textDisplay.setText(fruitModel.toString());
 
                         } catch (JSONException e)
@@ -108,7 +104,6 @@ public class BynameFragment extends Fragment
                     }
                 }, new Response.ErrorListener()
                 {
-                    //handle errors
                     public void onErrorResponse(VolleyError error)
                     {
                         textDisplay.setText("Error loading data. " + error.toString());
